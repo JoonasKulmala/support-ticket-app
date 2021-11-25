@@ -3,33 +3,34 @@
 
 <head>
     <style>
-
     </style>
+    <div align=center class="p-3 mb-2 bg-primary text-white">Welcome, [[${#httpServletRequest.remoteUser}]]</div>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
     <title>
         Support Page
     </title>
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+
+     </script>
     
 </head>
 
 <body>
 <div class="container">
-    <nav>
-    </nav>
-
-	<div>
-		<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
-	</div>
+    <br>
 	<div>
 		<form th:action="@{/logout}" method="post">
     		<input type="submit" value="Sign Out" class="btn btn-s btn-info"/>
+            <a href="/add" class="btn btn-s btn-success">New Ticket</a>
     	</form>
 	</div>
+    <hr>
 
     <div>
-        <h1>Tickets</h1>
+        <h2>Tickets</h2>
 	 </div>
 
         <table class="table table-striped">
@@ -53,8 +54,6 @@
                 
             </tr>
         </table>
-        <a href="/add" class="btn btn-s btn-success">New Ticket</a>
-
 
     <aside>
     </aside>

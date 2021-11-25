@@ -3,8 +3,8 @@
 
 <head>
 	<style>
-
 	</style>
+	<div align=center class="p-3 mb-2 bg-primary text-white">Welcome, [[${#httpServletRequest.remoteUser}]]</div>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
 	<title>
 		Support Page
@@ -14,21 +14,19 @@
 </head>
 
 <body>
-	<nav>
-	</nav>
 
-	<div>
-		<h1>New Ticket</h1>
+	<div class="container">
+		<br>
+		<hr>
+		<h2>New Ticket</h2>
 
 		<div>
 			<form th:object="${ticket}" th:action="@{save}" action="#" method="post">
 				<label for="topic">Topic</label>
 				<input type="text" id="topic" th:field="*{topic}" />
-				<br>
 				<label for="starter">Starter</label>
 				<input type="text" id="starter" th:field="*{starter}" />
 				<br>
-
 				<label for="branchlist">Branch</label>
 				<select id="branchlist" style="width: 100px" th:field="*{branch}" class="form-control">
 					<option th:each="branch: ${branches}" th:value="${branch.branchid}"
@@ -49,10 +47,10 @@
 						th:text="${status.name}">
 					</option>
 				</select>
-				<input type="submit" value="Save" class="btn btn-success"></input>
+				<hr>
+				<input type="submit" value="Submit" class="btn btn-success"></input>
+				<td><a th:href="@{/support}" class="btn btn-warning">Cancel</a></td>
 			</form>
-
-			<td><a th:href="@{/support}" class="btn btn-warning">Cancel</a></td>
 		</div>
 
 	</div>

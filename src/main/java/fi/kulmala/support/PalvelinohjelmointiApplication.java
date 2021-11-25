@@ -19,7 +19,7 @@ public class PalvelinohjelmointiApplication {
 			UserRepository repository3, UrgencyRepository repository4, BranchRepository repository5) {
 		return (args) -> {
 
-			// Clear database on startup
+			// Clear database on app start
 			repository.deleteAll();
 			repository2.deleteAll();
 			repository3.deleteAll();
@@ -46,12 +46,11 @@ public class PalvelinohjelmointiApplication {
 			repository5.save(new Branch("Management"));
 			repository5.save(new Branch("IT"));
 
-			// repository.save(new Ticket("Printer jammed", "Sales & Rep", "Mathew Market",
-			// repository4.findByName("Low").get(0),
-			// repository2.findByName("Open").get(0)));
-
 			repository.save(new Ticket("Laptop on fire", "Larry Lawyer", repository5.findByName("Legal").get(0),
-					repository4.findByName("High").get(0), repository2.findByName("Working On").get(0)));
+					repository4.findByName("High").get(0), repository2.findByName("Open").get(0)));
+
+			repository.save(new Ticket("Printer out of ink", "John Doe", repository5.findByName("Sales & Rep").get(0),
+					repository4.findByName("Low").get(0), repository2.findByName("Working On").get(0)));
 
 		};
 	}

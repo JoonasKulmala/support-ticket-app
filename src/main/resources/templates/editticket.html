@@ -40,12 +40,10 @@
                 <select id="catlist" th:field="*{status.statusid}" class="form-control">
                 <option th:each="cat: ${statuses}" th:value="${cat.statusid}" th:text="${cat.name}"></option>
                 </select>
-
                 <div style="clear: both; display: block; height: 10px;"></div>
                 <input type="submit" class="btn btn-s btn-success" value="Save"></input>
+                <td><a th:href="@{/support}" class="btn bnt-s btn-warning">Cancel</a></td>
             </form>
-            <br>
-            <td><a th:href="@{/support}" class="btn bnt-s btn-warning">Cancel</a></td>
         </div>
 
     </div>
