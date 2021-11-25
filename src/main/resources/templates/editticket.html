@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+    </style>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <title>
+        Support Page
+    </title>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav>
+    </nav>
+
+    <div>
+        <h1>Edit Ticket</h1>
+
+        <div>
+            <form th:object="${ticket}" th:action="@{../save}" action="#" method="post">
+                <input type="hidden" th:field="*{id}" class="form-control" />
+                <input type="text" th:field="*{topic}" />
+                <input type="text" th:field="*{starter}" />
+
+                <label for="branchlist">Branch</label>
+                <select id="catlist" th:field="*{branch.branchid}" class="form-control">
+                <option th:each="cat: ${branches}" th:value="${cat.branchid}" th:text="${cat.name}"></option>
+                </select>
+
+                <label for="urglist">Urgency</label>
+                <select id="catlist" th:field="*{urgency.urgencyid}" class="form-control">
+                <option th:each="cat: ${urgencies}" th:value="${cat.urgencyid}" th:text="${cat.name}"></option>
+                </select>
+
+                <label for="statuslist">Status</label>
+                <select id="catlist" th:field="*{status.statusid}" class="form-control">
+                <option th:each="cat: ${statuses}" th:value="${cat.statusid}" th:text="${cat.name}"></option>
+                </select>
+
+                <div style="clear: both; display: block; height: 10px;"></div>
+                <input type="submit" class="btn btn-s btn-success" value="Save"></input>
+            </form>
+            <br>
+            <td><a th:href="@{/support}" class="btn bnt-s btn-warning">Cancel</a></td>
+        </div>
+
+    </div>
+
+    <aside>
+    </aside>
+
+</body>
+
+</html>

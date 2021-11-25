@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+
+	</style>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+	<title>
+		Support Page
+	</title>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<nav>
+	</nav>
+
+	<div>
+		<h1>New Ticket</h1>
+
+		<div>
+			<form th:object="${ticket}" th:action="@{save}" action="#" method="post">
+				<label for="topic">Topic</label>
+				<input type="text" id="topic" th:field="*{topic}" />
+				<br>
+				<label for="starter">Starter</label>
+				<input type="text" id="starter" th:field="*{starter}" />
+				<br>
+
+				<label for="branchlist">Branch</label>
+				<select id="branchlist" style="width: 100px" th:field="*{branch}" class="form-control">
+					<option th:each="branch: ${branches}" th:value="${branch.branchid}"
+						th:text="${branch.name}">
+					</option>
+				</select>
+
+				<label for="urgencylist">Urgency</label>
+				<select id="urgencylist" style="width: 100px" th:field="*{urgency}" class="form-control">
+					<option th:each="urgency: ${urgencies}" th:value="${urgency.urgencyid}"
+						th:text="${urgency.name}">
+					</option>
+				</select>
+
+				<label for="statuslist">Status</label>
+				<select id="statuslist" style="width: 100px" th:field="*{status}" class="form-control">
+					<option th:each="status: ${statuses}" th:value="${status.statusid}"
+						th:text="${status.name}">
+					</option>
+				</select>
+				<input type="submit" value="Save" class="btn btn-success"></input>
+			</form>
+
+			<td><a th:href="@{/support}" class="btn btn-warning">Cancel</a></td>
+		</div>
+
+	</div>
+
+	<aside>
+	</aside>
+
+</body>
+
+</html>
