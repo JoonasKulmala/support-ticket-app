@@ -22,7 +22,7 @@ Palvelinohjelmointi - SWD4TN020
 
 `Java 11` is required to run this application.
 
-Run the main application file [PalvelinohjelmointiApplication.java](src/main/java/fi/kulmala/Bookstore/PalvelinohjelmointiApplication.java) and open browser at port 8080
+Run the main application file [PalvelinohjelmointiApplication.java](src/main/java/fi/kulmala/support/PalvelinohjelmointiApplication.java) and open browser at port 8080
 
     localhost:8080
 
@@ -41,7 +41,7 @@ Application has the following authentication services:
 - login
 
 <kbd>
-  <img src="Resources/login.png", width=200 height=100%>
+  <img src="Resources/login.PNG", width=200 height=100%>
 </kbd>
 
 ### CRUD functionality
@@ -51,7 +51,7 @@ Navigate to main view
     localhost:8080/support
 
 <kbd>
-  <img src="Resources/mainview.png", width=600 height=100%>
+  <img src="Resources/mainview.PNG", width=600 height=100%>
 </kbd>
 
 ### REST API
@@ -63,7 +63,7 @@ Rest API endpoints are available at
     localhost:8080/api
 
 <kbd>
-  <img src="Resources/api.png", width=350 height=100%>
+  <img src="Resources/api.PNG", width=350 height=100%>
 </kbd>
 
 ## License
